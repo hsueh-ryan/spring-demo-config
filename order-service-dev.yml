@@ -1,0 +1,26 @@
+# ============================================================
+# order-service-dev.yml - order-service 的開發環境配置
+# ============================================================
+# 當 Config Client 使用 profile=dev 時，此檔案會被載入。
+# 這裡的設定會覆蓋 order-service.yml 中的同名屬性。
+#
+# 使用情境：開發人員本地開發時使用
+# ============================================================
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/order_db_dev
+    username: dev_user
+    password: dev_password
+
+# 開發環境通常需要更詳細的日誌
+logging:
+  level:
+    root: DEBUG
+    com.ryan: TRACE
+
+# 覆蓋預設的業務參數
+order:
+  max-items: 100
+  notification:
+    enabled: false  # 開發環境關閉通知，避免發送真實郵件
