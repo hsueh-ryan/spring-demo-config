@@ -1,0 +1,30 @@
+# ============================================================
+# order-service.yml - order-service 的預設（default profile）配置
+# ============================================================
+# 當 Config Client 的 spring.application.name=order-service 時，
+# 會自動載入此檔案的內容。
+#
+# 載入優先順序（由低到高）：
+#   1. application.yml（共用）
+#   2. order-service.yml（本檔案，服務專用）
+#   3. order-service-{profile}.yml（環境專用）
+# 優先順序高的會覆蓋低的同名屬性。
+# ============================================================
+
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/order_db
+    username: root
+    password: default_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 自訂業務參數
+order:
+  max-items: 50
+  default-currency: TWD
+  notification:
+    enabled: true
+    email: admin@example.com
