@@ -17,5 +17,5 @@ logging:
 
 # 共用的自訂屬性
 app:
-  description: "這是由 Config Server git 統一管理的配置"
+  description: "這是由 Config Server git v2 統一管理的配置"
   version: "1.0.0"
